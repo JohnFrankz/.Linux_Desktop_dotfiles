@@ -1,0 +1,160 @@
+" not vi compatible
+set nocompatible 
+
+
+
+"------------------
+" Syntax and indent
+"------------------
+
+" Turn on syntax highlighting.
+syntax enable
+syntax on
+" show matching braces when text indicator is over them
+set showmatch 
+" set to force 256 colors
+set t_Co=256
+set termguicolors
+"colorscheme github
+" enable file type detection
+filetype plugin indent on
+set autoindent
+
+
+
+"---------------------
+" Basic editing config
+"---------------------
+
+" disable startup message
+set shortmess+=I
+" Show line numbers.
+set number
+set relativenumber
+" incremental search (as string is being typed)
+set incsearch
+" highlight searc
+set hls
+" hide mode
+" set noshowmode 
+set scrolloff=5
+" Always show the status line at the bottom, even if you only have one window open.
+set laststatus=2
+" backspace over anything.
+set backspace=indent,eol,start
+" automatically set current directory to directory of last opened file
+set autochdir
+" Automatically update files when files are modified externally.
+set autoread
+" allow auto-hiding of edited buffers
+set hidden
+" more history
+set history=8192
+" use 4 spaces instead of tabs during formatting
+set expandtab
+set tabstop=4
+set shiftwidth=4
+set softtabstop=4
+" smart case-sensitive search
+set ignorecase
+set smartcase
+" enable mouse mode (scrolling, selection, etc)
+set mouse=a
+" disable folding by default
+set nofoldenable
+set clipboard=unnamed,unnamedplus
+
+
+"--------------------
+" Misc configurations
+"--------------------
+
+" unbind keys
+map <C-a> <Nop>
+map <C-x> <Nop>
+nmap Q <Nop>
+" Disable audible bell because it's annoying.
+set noerrorbells visualbell t_vb=
+" toggle relative numbering
+nnoremap <C-n> :set rnu!<CR>
+" No arrow keys --- force yourself to use the home row
+nnoremap <Left>  :echoe "Use h"<CR>
+nnoremap <Right> :echoe "Use l"<CR>
+nnoremap <Up>    :echoe "Use k"<CR>
+nnoremap <Down>  :echoe "Use j"<CR>
+" ...and in insert mode
+inoremap <Left>  <ESC>:echoe "Use h"<CR>
+inoremap <Right> <ESC>:echoe "Use l"<CR>
+inoremap <Up>    <ESC>:echoe "Use k"<CR>
+inoremap <Down>  <ESC>:echoe "Use j"<CR>
+vnoremap <C-S-Y> "+y
+inoremap {<CR> {<CR>}<Esc>ko
+nnoremap z i<BS><Esc>l
+
+" open new split panes to right and bottom, which feels more natural
+set splitbelow
+set splitright
+
+"---------------------
+" Fix problem
+"---------------------
+
+
+"---------------------
+" Plugin key
+"---------------------
+
+nnoremap <Leader>cd :Copilot disable<CR>
+nnoremap <leader>ce :Copilot enable<CR>
+
+" NERDTree
+"=====================
+" open NERDTree
+nnoremap <C-n> :NERDTree<CR>
+nnoremap <C-t> :NERDTreeToggle<CR>
+nnoremap <C-f> :NERDTreeFind<CR>
+
+" C/C++
+" =====================
+" in normal mode F2 will save the file
+nmap <F2> :w<CR>
+" in insert mode F2 will exit insert, save, enters insert again
+imap <F2> <ESC>:w<CR>i
+" switch between header/source with F4
+map <F4> :e %:p:s,.h$,.X123X,:s,.cpp$,.h,:s,.X123X$,.cpp,<CR>
+
+"---------------------
+" Plugin configuration
+"---------------------
+
+
+call plug#begin('~/.vim/plugged')
+
+Plug 'preservim/nerdtree'
+Plug 'tomtom/tcomment_vim'
+" Plug 'tpope/vim-commentary'
+"Plug 'preservim/nerdcommenter'
+Plug 'bfrg/vim-cpp-modern'
+Plug 'cormacrelf/vim-colors-github'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-repeat'
+Plug 'github/copilot.vim'
+Plug 'hardhackerlabs/theme-vim', { 'as': 'hardhacker' }
+
+call plug#end()
+"---------------------
+"Plugin config
+"--------------------
+
+let g:hardhacker_darker = 1
+colorscheme hardhacker
+
+" vim-cpp-modern
+" ====================
+" Enable highlighting of C++11 attributes
+let g:cpp_attributes_highlight = 1
+" Highlight struct/class member variables (affects both C and C++ files)
+let g:cpp_member_highlight = 1
+" Put all standard C and C++ keywords under Vim's highlight group 'Statement'
+" (affects both C and C++ files)
+let g:cpp_simple_highlight = 1

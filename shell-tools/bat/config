@@ -1,0 +1,9 @@
+# Set the theme to "TwoDark"
+# --theme="GitHub"
+--theme="ansi"
+
+# Show line numbers, Git modifications and file header (but no grid)
+--style="numbers,changes,header"
+
+# set auto paging
+--paging="auto"
