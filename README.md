@@ -20,4 +20,5 @@ git clone https://github.com/JohnFrankz/Linux_Desktop_dotfiles.git && cd Linux_D
 - [tmux](https://github.com/tmux/tmux) - Terminal Multiplexers
 - [tpm](https://github.com/tmux-plugins/tpm) - Tmux Plugin Manager
 - [translate-shell](https://github.com/soimort/translate-shell) - command-line translator
+- [slides](https://github.com/maaslalani/slides) - Slides in your terminal
 
