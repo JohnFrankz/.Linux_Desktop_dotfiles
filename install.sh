@@ -35,6 +35,7 @@ backup_if_exists ~/.profile
 # ===============================
 # Config Terminal
 # ===============================
+
 echo "[dotfiles] [Terminal]"
 # install zsh
 echo "[dotfiles] [Terminal] Installing zsh"
@@ -48,8 +49,6 @@ fi
 echo "source $(pwd)/shell-tools/zsh/alias.zsh" >> ~/.zshrc
 ln -fs $(pwd)/shell-tools/zsh/zpreztorc ~/.zpreztorc
 
-
-
 # install vim
 echo "[dotfiles] [Terminal] Installing vim"
 sudo apt install vim-gtk3
@@ -58,7 +57,6 @@ curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 ln -fs $(pwd)/shell-tools/vim/vimrc ~/.vimrc
 sudo curl -fsSL https://deb.nodesource.com/setup_20.x | bash - &&apt-get install -y nodejs
-
 
 # install bat
 echo "[dotfiles] [Terminal] Installing bat"
@@ -74,9 +72,11 @@ git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 ln -fs $(pwd)/shell-tools/tmux/tmux.conf ~/.tmux.conf
 sudo apt install  xsel
 
+# install tree
 echo "[dotfiles] [Terminal] Installing tree"
 sudo apt install tree
 
+# install ffmpeg
 echo "[dotfiles] [Terminal] Installing ffmpeg"
 sudo apt install ffmpeg
 sudo apt install ffprobe
@@ -87,6 +87,10 @@ ln -fs $(pwd)/shell-tools/translate-shell ~/.translate-shell
 
 echo "[dotfiles] [Terminal] Installing mediainfo"
 sudo apt install mediainfo
+
+echo "[dotfiles] [Terminal] Installing glow"
+sudo apt install glow
+
 
 # ===============================
 # Gnome Desktop Environment
@@ -147,6 +151,9 @@ echo "[dotfiles] [Gnome Desktop Environment] Installing WhiteSur-cursor-theme"
 git clone https://github.com/vinceliuice/WhiteSur-wallpapers.git ~/util/gnome-wallpapers/WhiteSur-wallpapers
 sudo ~/util/gnome-wallpapers/WhiteSur-wallpapers/install-gnome-backgrounds.sh
 
+# install trash
+echo "[dotfiles] [Gnome Desktop Environment] Installing trash"
+sudo apt install trash-cli
 
 # ===============================
 # Config Development Environment

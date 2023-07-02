@@ -9,6 +9,8 @@ help() {
     "$@" --help 2>&1 | bathelp
 }
 
+alias rm='echo "This is not the command you are looking for, try trash instead."; false'
+
 alias t2en='trans :en'
 alias t2zh='trans :zh'
 alias t2eni='trans :en -shell -brief'

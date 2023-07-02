@@ -21,4 +21,5 @@ git clone https://github.com/JohnFrankz/Linux_Desktop_dotfiles.git && cd Linux_D
 - [tpm](https://github.com/tmux-plugins/tpm) - Tmux Plugin Manager
 - [translate-shell](https://github.com/soimort/translate-shell) - command-line translator
 - [slides](https://github.com/maaslalani/slides) - Slides in your terminal
-
+- [glow](https://github.com/charmbracelet/glow) - Render markdown on the CLI
+- [trash-cli](https://github.com/andreafrancia/trash-cli) - Command Line Interface to FreeDesktop.org Trash
