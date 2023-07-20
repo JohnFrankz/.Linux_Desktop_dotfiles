@@ -21,7 +21,7 @@ alias t2zhi='trans :zh -shell -brief'
 # directory.
 gettd() {
     _default_directory_="."
-    _show_calculation_time_=false
+    _show_calculation_time_=true
     directory="$1"
 
     if [ -z "$directory" ]; then
