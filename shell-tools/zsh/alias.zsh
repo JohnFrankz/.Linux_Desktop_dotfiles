@@ -52,3 +52,19 @@ gettd() {
     fi
 }
 
+listtd() {
+    # 获取第一个参数作为目标文件夹路径，如果没有参数则使用当前文件夹
+    target_folder="${1:-.}"
+    
+    find "$target_folder" -type f -iname "*.mp4" | while read -r file; do
+        # 使用 mediainfo 获取视频文件时长
+        duration=$(mediainfo --Inform="Video;%Duration%" "$file")
+
+        # 将毫秒数转换为 HH:MM:SS 格式
+        duration_formatted=$(date -d "@$((duration/1000))" -u +'%H:%M:%S')
+        filename=$(basename "$file")
+
+        # 打印文件名和时长
+        echo "$duration_formatted\t$filename"
+    done
+}
