@@ -16,12 +16,14 @@ alias t2en='trans :en'
 alias t2zh='trans :zh'
 alias t2eni='trans :en -shell -brief'
 alias t2zhi='trans :zh -shell -brief'
+alias math='cd /media/rice/HIKSEMI/video/math'
+alias eng='cd /media/rice/HIKSEMI/video/eng'                                    alias 408='cd /media/rice/HIKSEMI/video/408'
 
 # This is a function to calculate the total duration of all mp4 files in a 
 # directory.
 gettd() {
     _default_directory_="."
-    _show_calculation_time_=true
+    _show_calculation_time_=false
     directory="$1"
 
     if [ -z "$directory" ]; then
@@ -56,7 +58,7 @@ listtd() {
     # 获取第一个参数作为目标文件夹路径，如果没有参数则使用当前文件夹
     target_folder="${1:-.}"
     
-    find "$target_folder" -type f -iname "*.mp4" | while read -r file; do
+    find "$target_folder" -type f -iname "*.mp4" | sort  | while read -r file; do
         # 使用 mediainfo 获取视频文件时长
         duration=$(mediainfo --Inform="Video;%Duration%" "$file")
 
@@ -67,4 +69,16 @@ listtd() {
         # 打印文件名和时长
         echo "$duration_formatted\t$filename"
     done
+}
+
+gltd() {
+    target_folder="${1:-.}"
+    gettd "$target_folder"
+    # print a blank line
+    echo
+
+    # if gettd succeed, then listtd
+    if [ $? -eq 0 ]; then
+      listtd "$target_folder"
+    fi
 }
