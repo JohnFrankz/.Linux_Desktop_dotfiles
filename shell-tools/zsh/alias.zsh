@@ -11,13 +11,14 @@ help() {
 
 
 alias cfw='~/util/Clash\ for\ Windows-0.20.27-x64-linux/cfw'
-alias rm='echo "This is not the command you are looking for, try trash instead."; false'
+alias rm='echo "This is not the command you are looking for, try trash instead.\nIf you really want to use rm, try /bin/rm";false'
 alias t2en='trans :en'
 alias t2zh='trans :zh'
 alias t2eni='trans :en -shell -brief'
 alias t2zhi='trans :zh -shell -brief'
 alias math='cd /media/rice/HIKSEMI/video/math'
 alias eng='cd /media/rice/HIKSEMI/video/eng'                                    alias 408='cd /media/rice/HIKSEMI/video/408'
+alias smalbum='~/Daily/1001_Albums/show_me_album'
 
 # This is a function to calculate the total duration of all mp4 files in a 
 # directory.
@@ -82,3 +83,4 @@ gltd() {
       listtd "$target_folder"
     fi
 }
+

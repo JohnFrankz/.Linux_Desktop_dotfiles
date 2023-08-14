@@ -71,6 +71,7 @@ echo "[dotfiles] [Terminal] Configuring tmux"
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 ln -fs $(pwd)/shell-tools/tmux/tmux.conf ~/.tmux.conf
 sudo apt install  xsel
+sudo ln -s $(pwd)/shell-tools/tmux/tmux-window-list.sh /usr/local/bin/tmux-window-list
 
 # install tree
 echo "[dotfiles] [Terminal] Installing tree"
