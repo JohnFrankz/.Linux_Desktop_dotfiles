@@ -10,7 +10,8 @@ help() {
 }
 
 
-alias cfw='~/util/Clash\ for\ Windows-0.20.27-x64-linux/cfw'
+# alias cfw='~/util/Clash\ for\ Windows-0.20.27-x64-linux/cfw'
+alias cfw='~/util/Clash\ for\ Windows-**/cfw &> /dev/null &'
 alias rm='echo "This is not the command you are looking for, try trash instead.\nIf you really want to use rm, try /bin/rm";false'
 alias t2en='trans :en'
 alias t2zh='trans :zh'

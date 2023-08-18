@@ -54,11 +54,11 @@ set history=8192
 function! SetCustomIndent()
     if &filetype == 'asm'
         set noexpandtab
-	elseif &filetype == 'c' || &filetype == 'h'
-		set expandtab
-		set tabstop=8
-		set shiftwidth=8
-		set softtabstop=8
+	" elseif &filetype == 'c' || &filetype == 'h'
+	" 	set expandtab
+	" 	set tabstop=4
+	" 	set shiftwidth=4
+	" 	set softtabstop=4
     else
         set expandtab
 		set tabstop=4
@@ -66,6 +66,7 @@ function! SetCustomIndent()
         set softtabstop=4
     endif
 endfunction
+
 
 " Call the function when opening a buffer
 autocmd BufRead,BufNewFile * call SetCustomIndent()
