@@ -105,7 +105,6 @@ inoremap <Up>    <ESC>:echoe "Use k"<CR>
 inoremap <Down>  <ESC>:echoe "Use j"<CR>
 vnoremap <C-S-Y> "+y
 inoremap {<CR> {<CR>}<Esc>ko
-nnoremap z i<BS><Esc>l
 
 " toggle line numbers
 nnoremap <leader>n :set number!<CR>
@@ -113,6 +112,31 @@ nnoremap <leader>n :set number!<CR>
 nnoremap <leader>r :set number!<CR>:set relativenumber!<CR>
 " Clear search highlighting.
 nnoremap <leader>c :let @/ = ""<CR>
+
+"---------------------
+" buffers
+" --------------------
+nnoremap <Leader>b :buffers<CR>:buffer<Space>
+nnoremap ]b :bnext<CR>
+nnoremap [b :bprevious<CR>
+nnoremap ]B :blast<CR>
+nnoremap [B :bfirst<CR>
+
+"---------------------
+" arguments
+" --------------------
+nnoremap <Leader>A :buffers<CR>:args<Space>
+nnoremap <Leader>a :args<CR>
+nnoremap ]a :next<CR>
+nnoremap [a :previous<CR>
+nnoremap ]A :last<CR>
+nnoremap [A :first<CR>
+
+"---------------------
+" source
+" --------------------
+nnoremap <Leader>s :source ~/.vimrc<CR>
+
 
 
 " open new split panes to right and bottom, which feels more natural
@@ -149,7 +173,7 @@ map <F4> :e %:p:s,.h$,.X123X,:s,.cpp$,.h,:s,.X123X$,.cpp,<CR>
 
 " fzf
 " =======================
-nnoremap <silent> <Leader>b :Buffers<CR>
+" nnoremap <silent> <Leader>b :Buffers<CR>
 nnoremap <silent> <C-f> :Files<CR>
 nnoremap <silent> <Leader>f :Rg<CR>
 nnoremap <silent> <Leader>/ :BLines<CR>
@@ -179,6 +203,8 @@ Plug 'github/copilot.vim'
 " Plug 'tpope/vim-obsession'
 " Plug 'hardhackerlabs/theme-vim', { 'as': 'hardhacker' }
 " Plug 'cormacrelf/vim-colors-github'
+Plug 'andreypopp/vim-colors-plain'
+Plug 'owickstrom/vim-colors-paramount'
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 
@@ -187,9 +213,12 @@ call plug#end()
 "Plugin config
 "--------------------
 
+" Open the existing NERDTree on each new tab.
+autocmd BufWinEnter * if getcmdwintype() == '' | silent NERDTreeMirror | endif
+
 let g:hardhacker_darker = 1
 " colorscheme hardhacker
-colorscheme zellner
+colorscheme plain
 
 " vim-cpp-modern
 " ====================
