@@ -47,6 +47,8 @@ if [ ! -f ~/.zshrc ]; then
     touch ~/.zshrc
 fi
 echo "source $(pwd)/shell-tools/zsh/alias.zsh" >> ~/.zshrc
+echo "source $(pwd)/shell-tools/zsh/export.zsh" >> ~/.zshrc
+echo "source $(pwd)/shell-tools/zsh/py-venv.zsh" >> ~/.zshrc
 ln -fs $(pwd)/shell-tools/zsh/zpreztorc ~/.zpreztorc
 
 # install vim
@@ -169,6 +171,11 @@ echo "[dotfiles] [Development Environment] Installing python"
 sudo apt install python3
 
 mkdir ~/Development
+
+# config python virtual environment
+mkdir -p ~/Development/python3-venv/default
+python3 -m venv ~/Development/python3-venv/default
+source ~/Development/python3-venv/default/bin/activate
 
 # install tomcat
 echo "[dotfiles] [Development Environment] Installing tomcat"
