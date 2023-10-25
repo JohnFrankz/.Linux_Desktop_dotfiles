@@ -57,6 +57,9 @@ sudo apt install vim-gtk3
 echo "[dotfiles] [Terminal] Configuring vim"
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+ln -fs $(pwd)/shell-tools/vim/settings ~/.vim/settings
+ln -fs $(pwd)/shell-tools/vim/keymap ~/.vim/keymap
+ln -fs $(pwd)/shell-tools/vim/plugconfig ~/.vim/plugconfig
 ln -fs $(pwd)/shell-tools/vim/vimrc ~/.vimrc
 sudo curl -fsSL https://deb.nodesource.com/setup_20.x | bash - &&apt-get install -y nodejs
 
