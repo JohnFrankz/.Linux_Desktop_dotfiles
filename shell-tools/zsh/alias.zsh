@@ -21,6 +21,9 @@ alias math='cd /media/rice/HIKSEMI/video/math'
 alias eng='cd /media/rice/HIKSEMI/video/eng'                                    alias 408='cd /media/rice/HIKSEMI/video/408'
 alias smalbum='~/Daily/1001_Albums/show_me_album'
 alias gsconnect="~/.local/share/gnome-shell/extensions/gsconnect@andyholmes.github.io/service/daemon.js"
+alias vimwiki='vim -c VimwikiUISelect'
+alias mylog='vim ~/Daily/log ~/Daily/plan ~/Daily/schedule'
+
 
 
 # This is a function to calculate the total duration of all mp4 files in a 

@@ -16,5 +16,7 @@ Plug 'andreypopp/vim-colors-plain'
 Plug 'owickstrom/vim-colors-paramount'
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'vimwiki/vimwiki', { 'branch': 'dev' }
+Plug 'lervag/vimtex'
 
 call plug#end()

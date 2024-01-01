@@ -13,3 +13,19 @@ function! SetCustomIndent()
         set softtabstop=4
     endif
 endfunction
+
+function! ReplaceChineseChars()
+    %s/，/, /ge
+    %s/。/. /ge
+    %s/（/(/ge
+    %s/）/)/ge
+    %s/；/; /ge
+    %s/：/: /ge
+    %s/“/"/ge
+    %s/”/"/ge
+    %s/‘/'/ge
+    %s/’/'/ge
+    %s/【/[/ge
+    %s/】/]/ge
+endfunction
+

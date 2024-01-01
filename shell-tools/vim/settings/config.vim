@@ -34,7 +34,11 @@ set hidden
 " more history
 set history=8192
 " Call the function when opening a buffer
-autocmd BufRead,BufNewFile * call SetCustomIndent()
+" autocmd BufRead,BufNewFile * call SetCustomIndent()
+set expandtab
+set tabstop=4
+set shiftwidth=4
+set softtabstop=4
 " smart case-sensitive search
 set ignorecase
 set smartcase
