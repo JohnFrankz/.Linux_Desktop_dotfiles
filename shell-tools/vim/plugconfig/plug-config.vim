@@ -9,7 +9,7 @@ autocmd BufWinEnter * if getcmdwintype() == '' | silent NERDTreeMirror | endif
 let g:hardhacker_darker = 1
 " colorscheme hardhacker
 " set background=dark
-colorscheme plain
+" colorscheme plain
 
 " vim-cpp-modern
 " -----------------------------------------------
